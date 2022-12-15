@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <img class="wave" src="assets/wave.svg">
+    <div class="container">
+        <div class="img">
+            <img src="assets/calendar.svg" alt="calendar">
+        </div>
+        <div class="login-container">
+            <form action="dashboard.html" onsubmit="return login()">
+                <img class="avatar" src="assets/avatar.svg">
+                <h2>Welcome Back</h2>
+                <div class="input-div a">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h5>Username</h5>
+                        <input class="input" id="username" type="text">
+                    </div>
+                </div>
+                <div class="input-div b">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Password</h5>
+                        <input class="input" id="password" type="password">
+                    </div>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <a href="loginsiswa.html" style="text-decoration: none; float: left;">Login Siswa</a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

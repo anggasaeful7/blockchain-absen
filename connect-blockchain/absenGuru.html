@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Absen Guru</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="js/location.js"></script>
+    
+</head>
+
+<body>
+    <div class="sidebar">
+        <header>Geo Attendance</header>
+        <ul>
+            <li id="nav-absenguru"><a href="absenGuru.html"><i class="far fa-envelope"></i>Absen Guru</a></li>
+            <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
+            <li id="nav-exit"><a><i class="fas fa-window-close"></i>Keluar</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" name="search" placeholder="Search">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-user"></i>
+            <div class="user">
+                <a href="profileGuru.html" class="profile-user">Account</a>
+            </div>
+        </div>
+        <h1 class="title-ds">Absen Guru</h1>
+        <button id="connectButton" class="absen-masuk" style="margin-left: 30px;">Connect</button>
+        <div class="date-time">
+            <p id="date_time"></p>
+        </div>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>NIP</th>
+                    <th>Nama</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Masuk</th>
+                    <th>Keluar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="nip">101023</td>
+                    <td id="nama">Abdul</td>
+                    <td id="lat">21.56</td>
+                    <td id="long">213.567</td>
+                    <td><button type="button" id="setGuruButton">POST</button></td>
+                    <td><button type="button" id="setGuruButton">POST</button></td>
+                </tr>
+            </tbody>
+    </div>
+</body>
+    <script src="./index.js" type="module"></script>
+    <!-- <script src="js/profileGuru.js"></script> -->
+    <!-- <script src="js/navakses.js"></script> -->
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- <script src="js/absenguru.js"></script> -->
+    <!-- <script src="js/cekGuru.js"></script> -->
+    <script type="text/javascript" src="js/datetime.js"></script>
+    <script type="text/javascript">date_time('date_time');</script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Profile</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <header>Geo Attendance</header>
+        <ul>
+            <li id="nav-dashboard"><a href="dashboard.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li id="nav-datasiswa"><a href="DataSiswa.html"><i class="fas fa-user"></i>Data Siswa</a></li>
+            <li id="nav-dataguru"><a href="DataGuru.html"><i class="fas fa-user"></i>Data Guru</a></li>
+            <li id="nav-absensiswa"><a href="absenSiswa.html"><i class="far fa-envelope"></i>Absen Siswa</a></li>
+            <li id="nav-absenguru"><a href="absenGuru.html"><i class="far fa-envelope"></i>Absen Guru</a></li>
+            <li id="nav-rekapsiswa"><a href="rekapSiswa.html"><i class="fas fa-calendar-week"></i>Rekap Siswa</a></li>
+            <li id="nav-rekapguru"><a href="rekapGuru.html"><i class="fas fa-calendar-week"></i>Rekap Guru</a></li>
+            <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
+            <li id="nav-exit"><a href="index.html"><i class="fas fa-window-close"></i>Keluar</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" name="search" placeholder="Search">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-user"></i>
+            <div class="user">
+                <a href="profile.html" class="profile-user">Account</a>
+            </div>
+        </div>
+        <h1 class="title-ds">Profile</h1>
+        <div id="admin_information">
+            <div id="admin_details">
+                <label>Nama</label>
+                <input type="text" name="name" class="input-profile" disabled>
+                <label>Tempat Lahir</label>
+                <input type="text" name="tempat" class="input-profile" disabled>
+                <label>Alamat</label>
+                <input type="text" name="alamat" class="input-profile" disabled>
+                <label>Email</label>
+                <input type="text" name="email" class="input-profile" disabled>
+                <label>Jenis Kelamin</label>
+                <input type="text" name="jk" class="input-profile" disabled>
+                <label>Agama</label>
+                <input type="text" name="agama" class="input-profile" disabled>
+            </div>
+        </div>
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="js/navakses.js"></script>
+
+</html>

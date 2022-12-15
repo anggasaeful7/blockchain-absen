@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ubah Guru</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    
+</head>
+
+<body>
+    <div class="sidebar">
+        <header>Geo Attendance</header>
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li><a href="DataSiswa.html"><i class="fas fa-user"></i>Data Siswa</a></li>
+            <li><a href="DataGuru.html"><i class="fas fa-user"></i>Data Guru</a></li>
+            <li><a href="absenSiswa.html"><i class="far fa-envelope"></i>Absen Siswa</a></li>
+            <li><a href="absenGuru.html"><i class="far fa-envelope"></i>Absen Guru</a></li>
+            <li><a href="rekapSiswa.html"><i class="fas fa-calendar-week"></i>Rekap Siswa</a></li>
+            <li><a href="rekapGuru.html"><i class="fas fa-calendar-week"></i>Rekap Guru</a></li>
+            <li><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
+            <li><a href="index.html"><i class="fa-window-close"></i>Keluar</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" name="search" placeholder="Search">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="assets/avatar.svg">
+            </div>
+        </div>
+        <h1 class="title-ds">Ubah Siswa</h1>
+        <form action="DataGuru.html">
+                <div class="input-div a">
+                    <div>
+                        <h4>NIP</h4>
+                        <input class="input-data" type="text" name="nip" placeholder="Masukan NIP" required>
+                    </div>
+                    <div>
+                        <h4>Nama Lengkap</h4>
+                        <input class="input-data" type="text" name="nama" placeholder="Masukan Nama" required>
+                </div>
+                 <div>
+                        <h4>Tempat Lahir</h4>
+                        <input class="input-data" type="text" name="tempat" placeholder="Masukan Tempat Lahir" required>
+                </div>
+                 <div>
+                        <h4>Tanggal Lahir</h4>
+                        <input class="input-data" type="text" name="tanggal" placeholder="Masukan Tanggal Lahir" required>
+                </div>
+                 <div>
+                        <h4>Alamat</h4>
+                        <input class="input-data" type="text" name="alamat" placeholder="Masukan Alamat" required>
+                </div>
+                 <div>
+                        <h4>Jenis Kelamin</h4>
+                        <input class="input-data" type="text" name="jk" placeholder="Masukan Jenis Kelamin" required>
+                </div>
+                 <div>
+                        <h4>Agama</h4>
+                        <input class="input-data" type="text" name="agama" placeholder="Masukan Agama" required>
+                </div>
+                 <div>
+                        <h4>Kelas</h4>
+                        <input class="input-data" type="text" name="kelas" placeholder="Masukan Kelas" required>
+                </div>
+                 <div>
+                        <h4>Email</h4>
+                        <input class="input-data" type="text" name="email" placeholder="Masukan Email" required>
+                </div>
+                 <div>
+                        <h4>Username</h4>
+                        <input class="input-data" type="text" name="username" placeholder="Masukan Username" required>
+                </div>
+                 <div>
+                        <h4>Password</h4>
+                        <input class="input-data" type="password" name="password" placeholder="Masukan Password" required>
+                </div>
+                <input type="submit" class="btn-submit" value="Submit">
+            </form>
+
+    <script>
+        let form = document.getElementById('form')
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+
+            let nis = document.getElementById('nis').value
+            let nama = document.getElementById('nama').value
+            let tempat = document.getElementById('tempat').value
+            let tanggal = document.getElementById('tanggal').value
+            let alamat = document.getElementById('alamat').value
+            let jk = document.getElementById('jk').value
+            let agama = document.getElementById('agama').value
+            let kelas = document.getElementById('kelas').value
+            let email = document.getElementById('email').value
+            let username = document.getElementById('username').value
+            let password = document.getElementById('password').value
+
+            fetch(`http://127.0.0.1:5011/update_data_siswa/${nis}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    "nis": nis,
+                    "nama": nama,
+                    "tempat": tempat,
+                    "tanggal": tanggal,
+                    "alamat": alamat,
+                    "jk": jk,
+                    "agama": agama,
+                    "kelas": kelas,
+                    "email": email,
+                    "username": username,
+                    "password": password
+                }),
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8"
+                }
+            })
+                .then(function (res) {
+                    return res.json()
+                })
+                .then(function (data) {
+                    console.log(data);
+                })
+        })
+    </script>
+</body>
+
+</html>

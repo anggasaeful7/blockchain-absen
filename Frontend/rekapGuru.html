@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Rekap Guru</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <header>Geo Attendance</header>
+        <ul>
+            <li id="nav-dashboard"><a href="dashboard.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li id="nav-datasiswa"><a href="DataSiswa.html"><i class="fas fa-user"></i>Data Siswa</a></li>
+            <li id="nav-dataguru"><a href="DataGuru.html"><i class="fas fa-user"></i>Data Guru</a></li>
+            <li id="nav-absensiswa"><a href="absenSiswa.html"><i class="far fa-envelope"></i>Absen Siswa</a></li>
+            <li id="nav-absenguru"><a href="absenGuru.html"><i class="far fa-envelope"></i>Absen Guru</a></li>
+            <li id="nav-rekapsiswa"><a href="rekapSiswa.html"><i class="fas fa-calendar-week"></i>Rekap Siswa</a></li>
+            <li id="nav-rekapguru"><a href="rekapGuru.html"><i class="fas fa-calendar-week"></i>Rekap Guru</a></li>
+            <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
+            <li id="nav-exit"><a href="index.html"><i class="fas fa-window-close"></i>Keluar</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" name="search" placeholder="Search">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-user"></i>
+            <div class="user">
+                <a href="profile.html" class="profile-user">Account</a>
+            </div>
+        </div>
+        <h1 class="title-ds">Rekap Absensi Guru</h1>
+        <form method="" action="">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="form-group">
+                        <label class="text-filter">Filter Tanggal</label>
+                        <div class="input-group">
+                            <input type="date" name="tgl_awal" value="" class="tgl-awal" placeholder="Tanggal Awal">
+                        <div class="input-group">
+                            <input type="text" style="margin-left: 30px;" name="nama" value="" class="input-data-2" placeholder="Masukan nama">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" name="filter" value="true" class="btn-tampil">TAMPILKAN</button>
+
+            <div class="card" style="width:400px; margin-left: 30px;">
+                <div class="card-body">
+                    <h4 class="card-title">Data ditemukan</h4>
+                        <p class="card-text">{{nip}}</p>
+                        <p class="card-text">{{nama}}</p>
+                        <p class="card-text">{{date/time}}</p>
+                        <a href="#" class="btn btn-primary" style="background: #6C63FF;">Print</a>
+                </div>
+            </div>
+    <script src="js/cek_admin.js"></script>
+    <script src="js/navakses.js"></script>
+</body>
+
+</html>
