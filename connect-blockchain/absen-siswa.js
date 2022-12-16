@@ -2,11 +2,11 @@ import { ethers } from "./ethers-5.6.esm.min.js"
 import { abi, contractAddress } from "./constants.js"
 
 const connectButton = document.getElementById("connectButton")
-const setGuruButton = document.getElementById("setGuruButton")
-const setGuruButton2 = document.getElementById("setGuruButton2")
+const setSiswaButton = document.getElementById("setSiswaButton")
+const setSiswaButton2 = document.getElementById("setSiswaButton2")
 connectButton.onclick = connect
-setGuruButton.onclick = set_guru
-setGuruButton2.onclick = set_guru
+setSiswaButton.onclick = set_siswa
+setSiswaButton2.onclick = set_siswa
 
 async function connect() {
     if (typeof window.ethereum !== "undefined") {
@@ -23,7 +23,7 @@ async function connect() {
     }
 }
 
-async function set_guru() {
+async function set_siswa() {
     var date = new Date()
     var current_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
 
@@ -32,7 +32,7 @@ async function set_guru() {
     var date_time = current_date + " " + current_time
 
     console.log("set")
-    const nis = document.getElementById("nip").innerText
+    const nis = document.getElementById("nis").innerText
     const nama = document.getElementById("nama").innerText
     const long = document.getElementById("long").innerText
     const lat = document.getElementById("lat").innerText
@@ -42,9 +42,10 @@ async function set_guru() {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const contract = new ethers.Contract(contractAddress, abi, signer)
-        const transactionResponse = await contract.setGuru(nis, nama, long, lat, tanggal)
+        const transactionResponse = await contract.setSiswa(nis, nama, long, lat, tanggal)
         await transactionResponse.wait(1)
         console.log(transactionResponse)
+        document.getElementById("response-siswa").innerHTML = "WORK GAN !!!!"
     } else {
         fundButton.innerHTML = "Please install MetaMask"
     }

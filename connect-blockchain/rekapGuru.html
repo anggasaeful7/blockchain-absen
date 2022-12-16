@@ -4,13 +4,14 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Absen Siswa</title>
+    <title>Rekap Guru</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="css/sidebar.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="js/location.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -39,38 +40,34 @@
                 <a href="profile.html" class="profile-user">Account</a>
             </div>
         </div>
-        <h1 class="title-ds">Absen Siswa</h1>
+        <h1 class="title-ds">Rekap Absensi Guru</h1>
         <button id="connectButton" class="absen-masuk" style="margin-left: 30px;">Connect</button>
-        <div class="date-time">
-            <p id="date_time"></p>
-        </div>
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>NIS</th>
-                    <th>Nama</th>
-                    <th>Latitude</th>
-                    <th>Longitude</th>
-                    <th>Masuk</th>
-                    <th>Keluar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="nis">101023</td>
-                    <td id="nama">Abdul</td>
-                    <td id="lat">213.55</td>
-                    <td id="long">11.6756</td>
-                    <td><button type="submit" class="absen-masuk" id="setSiswaButton">Absen</button></td>
-                    <td><button type="submit" class="absen-keluar" id="setSiswaButton">Absen</button></td>
-                </tr>
-    </div>
-</body>
-    <script src="./absen-siswa.js" type="module"></script>
-    <script src="js/profilSIswa.js"></script>
-    <script src="js/absensiswa.js"></script>
-    <script src="js/cekSiswa.js"></script>
+        <form method="" action="">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="form-group">
+                        <label class="text-filter">Filter Tanggal</label>
+                        <div class="input-group">
+                            <input type="date" id="get-tanggal-guru" name="tgl_awal" value="" class="tgl-awal" placeholder="Tanggal Awal">
+                        <div class="input-group">
+                            <input type="text" id="get-nama-guru" style="margin-left: 30px;" name="nama" value="" class="input-data-2" placeholder="Masukan nama">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="getGuruButton" name="filter" value="true" class="btn-tampil">TAMPILKAN</button>
+
+            <div class="card" style="width:400px; margin-left: 30px;">
+                <div class="card-body">
+                    <h4 class="card-title">Data ditemukan</h4>
+                        <p class="card-text" id="nip-guru">nip</p>
+                        <p class="card-text" id="nama-guru">nama</p>
+                        <p class="card-text" id="datetime-guru">tanggal</p>
+                </div>
+            </div>
+    <!-- <script src="js/cek_admin.js"></script> -->
     <script src="js/navakses.js"></script>
-    <script type="text/javascript" src="js/datetime.js"></script>
-    <script type="text/javascript">date_time('date_time');</script>
+    <script src="./get-absen-guru.js" type="module"></script>
+</body>
+
 </html>

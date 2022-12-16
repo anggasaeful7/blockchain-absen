@@ -2,11 +2,11 @@ import { ethers } from "./ethers-5.6.esm.min.js"
 import { abi, contractAddress } from "./constants.js"
 
 const connectButton = document.getElementById("connectButton")
-const setGuruButton = document.getElementById("setGuruButton")
-const setGuruButton2 = document.getElementById("setGuruButton2")
+const getGuruButton = document.getElementById("getGuruButton")
+const getGuruButton2 = document.getElementById("getGuruButton2")
 connectButton.onclick = connect
-setGuruButton.onclick = set_guru
-setGuruButton2.onclick = set_guru
+getGuruButton.onclick = get_guru
+getGuruButton2.onclick = get_guru
 
 async function connect() {
     if (typeof window.ethereum !== "undefined") {
@@ -23,28 +23,20 @@ async function connect() {
     }
 }
 
-async function set_guru() {
-    var date = new Date()
-    var current_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
-
-    var current_time = date.getHours() + ":" + date.getMinutes()
-
-    var date_time = current_date + " " + current_time
-
-    console.log("set")
-    const nis = document.getElementById("nip").innerText
-    const nama = document.getElementById("nama").innerText
-    const long = document.getElementById("long").innerText
-    const lat = document.getElementById("lat").innerText
-    const tanggal = date_time
-    console.log(nis, nama, long, lat, tanggal)
+async function get_guru() {
+    const get_nama = document.getElementById("get-nama-guru").value
+    const get_tanggal = document.getElementById("get-tanggal-guru").value
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const contract = new ethers.Contract(contractAddress, abi, signer)
-        const transactionResponse = await contract.setGuru(nis, nama, long, lat, tanggal)
-        await transactionResponse.wait(1)
+        const transactionResponse = await contract.getGuru(get_nama, get_tanggal)
         console.log(transactionResponse)
+        document.getElementById("nip-guru").innerHTML = transactionResponse[0]
+        document.getElementById("nama-guru").innerHTML = transactionResponse[1]
+        document.getElementById("longitude-guru").innerHTML = transactionResponse[2]
+        document.getElementById("latitude-guru").innerHTML = transactionResponse[3]
+        document.getElementById("datetime-guru").innerHTML = transactionResponse[4]
     } else {
         fundButton.innerHTML = "Please install MetaMask"
     }

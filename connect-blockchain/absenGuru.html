@@ -20,7 +20,7 @@
         <ul>
             <li id="nav-absenguru"><a href="absenGuru.html"><i class="far fa-envelope"></i>Absen Guru</a></li>
             <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
-            <li id="nav-exit"><a><i class="fas fa-window-close"></i>Keluar</a></li>
+            <button onclick="logout()" class="absen-masuk" style="margin-left: 30px;">Keluar</button>
         </ul>
     </div>
     <div class="main">
@@ -56,18 +56,19 @@
                     <td id="nama">Abdul</td>
                     <td id="lat">21.56</td>
                     <td id="long">213.567</td>
-                    <td><button type="button" id="setGuruButton">POST</button></td>
-                    <td><button type="button" id="setGuruButton2">POST</button></td>
+                    <td><button type="button" class="absen-masuk" id="setGuruButton">Masuk</button></td>
+                    <td><button type="button" class="absen-keluar" id="setGuruButton2">Keluar</button></td>
                 </tr>
             </tbody>
     </div>
 </body>
+    <script src="./js/logoutGuru.js"></script>
     <script src="./absen-guru.js" type="module"></script>
-    <!-- <script src="js/profileGuru.js"></script> -->
-    <!-- <script src="js/navakses.js"></script> -->
+    <script src="js/profileGuru.js"></script>
+    <script src="js/navakses.js"></script>
     <script src="sweetalert2.all.min.js"></script>
-    <!-- <script src="js/absenguru.js"></script> -->
-    <!-- <script src="js/cekGuru.js"></script> -->
+    <script src="js/absenguru.js"></script>
+    <script src="js/cekGuru.js"></script>
     <script type="text/javascript" src="js/datetime.js"></script>
     <script type="text/javascript">date_time('date_time');</script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
