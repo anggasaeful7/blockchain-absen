@@ -6,7 +6,6 @@ const getGuruButton = document.getElementById("getGuruButton")
 const getGuruButton2 = document.getElementById("getGuruButton2")
 connectButton.onclick = connect
 getGuruButton.onclick = get_guru
-getGuruButton2.onclick = get_guru
 
 async function connect() {
     if (typeof window.ethereum !== "undefined") {
@@ -25,7 +24,9 @@ async function connect() {
 
 async function get_guru() {
     const get_nama = document.getElementById("get-nama-guru").value
-    const get_tanggal = document.getElementById("get-tanggal-guru").value
+    const tanggal = document.getElementById("get-tanggal-guru").value
+    const jam = document.getElementById("get-jam-guru").value
+    const get_tanggal = tanggal + " " + jam
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()

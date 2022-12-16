@@ -6,7 +6,6 @@ const getSiswaButton = document.getElementById("getSiswaButton")
 const getSiswaButton2 = document.getElementById("getSiswaButton2")
 connectButton.onclick = connect
 getSiswaButton.onclick = get_siswa
-getSiswaButton2.onclick = get_siswa
 
 async function connect() {
     if (typeof window.ethereum !== "undefined") {
@@ -25,7 +24,9 @@ async function connect() {
 
 async function get_siswa() {
     const get_nama = document.getElementById("get-nama").value
-    const get_tanggal = document.getElementById("get-tanggal-siswa").value
+    const tanggal = document.getElementById("get-tanggal-siswa").value
+    const jam = document.getElementById("get-jam-siswa").value
+    const get_tanggal = tanggal + " " + jam
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner("0x71dFB7Ad8a9fFbddA327AF27aD680C3b9ed4B3AC")

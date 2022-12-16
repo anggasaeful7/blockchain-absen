@@ -25,7 +25,7 @@ async function connect() {
 
 async function set_guru() {
     var date = new Date()
-    var current_date = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
+    var current_date = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate()
 
     var current_time = date.getHours() + ":" + date.getMinutes()
 
