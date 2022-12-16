@@ -17,15 +17,9 @@
     <div class="sidebar">
         <header>Geo Attendance</header>
         <ul>
-            <li id="nav-dashboard"><a href="dashboard.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
-            <li id="nav-datasiswa"><a href="DataSiswa.html"><i class="fas fa-user"></i>Data Siswa</a></li>
-            <li id="nav-dataguru"><a href="DataGuru.html"><i class="fas fa-user"></i>Data Guru</a></li>
-            <li id="nav-absensiswa"><a href="absenSiswa.html"><i class="far fa-envelope"></i>Absen Siswa</a></li>
-            <li id="nav-absenguru"><a href="absenGuru.html"><i class="far fa-envelope"></i>Absen Guru</a></li>
-            <li id="nav-rekapsiswa"><a href="rekapSiswa.html"><i class="fas fa-calendar-week"></i>Rekap Siswa</a></li>
-            <li id="nav-rekapguru"><a href="rekapGuru.html"><i class="fas fa-calendar-week"></i>Rekap Guru</a></li>
             <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
-            <li id="nav-exit"><a href="index.html"><i class="fas fa-window-close"></i>Keluar</a></li>
+            <button onclick="logout()" class="absen-masuk" style="margin-left: 30px;">Keluar</button>
+            <li id="nav-absensiswa"><a href="absenSiswa.html"><i class="far fa-envelope"></i>Absen Siswa</a></li>
         </ul>
     </div>
     <div class="main">
@@ -66,11 +60,12 @@
                 </tr>
     </div>
 </body>
+    <script src="./js/logoutSiswa.js"></script>
     <script src="./absen-siswa.js" type="module"></script>
     <script src="js/profilSIswa.js"></script>
     <script src="js/absensiswa.js"></script>
     <script src="js/cekSiswa.js"></script>
-    <script src="js/navakses.js"></script>
+<!--     <script src="js/navakses.js"></script> -->
     <script type="text/javascript" src="js/datetime.js"></script>
     <script type="text/javascript">date_time('date_time');</script>
 </html>
