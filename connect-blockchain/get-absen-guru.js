@@ -3,7 +3,6 @@ import { abi, contractAddress } from "./constants.js"
 
 const connectButton = document.getElementById("connectButton")
 const getGuruButton = document.getElementById("getGuruButton")
-const getGuruButton2 = document.getElementById("getGuruButton2")
 connectButton.onclick = connect
 getGuruButton.onclick = get_guru
 
@@ -16,7 +15,6 @@ async function connect() {
         }
         connectButton.innerHTML = "Connected"
         const accounts = await ethereum.request({ method: "eth_accounts" })
-        console.log(accounts)
     } else {
         connectButton.innerHTML = "Please install MetaMask"
     }
@@ -25,8 +23,9 @@ async function connect() {
 async function get_guru() {
     const get_nama = document.getElementById("get-nama-guru").value
     const tanggal = document.getElementById("get-tanggal-guru").value
+    const new_tanggal = tanggal.replace(/-/g, "/")
     const jam = document.getElementById("get-jam-guru").value
-    const get_tanggal = tanggal + " " + jam
+    const get_tanggal = new_tanggal + " " + jam
 
     console.log(get_nama, get_tanggal)
     if (typeof window.ethereum !== "undefined") {
