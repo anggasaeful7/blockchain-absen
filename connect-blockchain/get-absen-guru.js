@@ -27,6 +27,8 @@ async function get_guru() {
     const tanggal = document.getElementById("get-tanggal-guru").value
     const jam = document.getElementById("get-jam-guru").value
     const get_tanggal = tanggal + " " + jam
+
+    console.log(get_nama, get_tanggal)
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()

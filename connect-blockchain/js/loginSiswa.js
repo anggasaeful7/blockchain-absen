@@ -28,7 +28,7 @@ function loginsiswa() {
                     confirmButtonText: "OK",
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "/Frontend/absenSiswa.html"
+                        window.location.href = "absenSiswa.html"
                     }
                 })
             } else {

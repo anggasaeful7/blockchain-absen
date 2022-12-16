@@ -17,7 +17,6 @@ async function connect() {
         }
         connectButton.innerHTML = "Connected"
         const accounts = await ethereum.request({ method: "eth_accounts" })
-        console.log(accounts)
     } else {
         connectButton.innerHTML = "Please install MetaMask"
     }
@@ -31,20 +30,17 @@ async function set_guru() {
 
     var date_time = current_date + " " + current_time
 
-    console.log("set")
     const nis = document.getElementById("nip").innerText
     const nama = document.getElementById("nama").innerText
     const long = document.getElementById("long").innerText
     const lat = document.getElementById("lat").innerText
     const tanggal = date_time
-    console.log(nis, nama, long, lat, tanggal)
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
         const contract = new ethers.Contract(contractAddress, abi, signer)
         const transactionResponse = await contract.setGuru(nis, nama, long, lat, tanggal)
         await transactionResponse.wait(1)
-        console.log(transactionResponse)
     } else {
         fundButton.innerHTML = "Please install MetaMask"
     }

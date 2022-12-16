@@ -16,8 +16,6 @@ contract Attandance {
     function setSiswa(
         string memory nis,
         string memory nama,
-        string memory kelas,
-        string memory mapel,
         string memory longitude,
         string memory latitude,
         string memory datetime
@@ -25,8 +23,6 @@ contract Attandance {
         siswa[concatenate(nama, datetime)] = [
             nis,
             nama,
-            kelas,
-            mapel,
             longitude,
             latitude,
             datetime
