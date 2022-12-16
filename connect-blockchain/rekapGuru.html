@@ -21,12 +21,10 @@
             <li id="nav-dashboard"><a href="dashboard.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
             <li id="nav-datasiswa"><a href="DataSiswa.html"><i class="fas fa-user"></i>Data Siswa</a></li>
             <li id="nav-dataguru"><a href="DataGuru.html"><i class="fas fa-user"></i>Data Guru</a></li>
-            <li id="nav-absensiswa"><a href="absenSiswa.html"><i class="far fa-envelope"></i>Absen Siswa</a></li>
-            <li id="nav-absenguru"><a href="absenGuru.html"><i class="far fa-envelope"></i>Absen Guru</a></li>
             <li id="nav-rekapsiswa"><a href="rekapSiswa.html"><i class="fas fa-calendar-week"></i>Rekap Siswa</a></li>
             <li id="nav-rekapguru"><a href="rekapGuru.html"><i class="fas fa-calendar-week"></i>Rekap Guru</a></li>
             <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
-            <li id="nav-exit"><a href="index.html"><i class="fas fa-window-close"></i>Keluar</a></li>
+            <button onclick="logout()" class="absen-masuk" style="margin-left: 30px;">Keluar</button>
         </ul>
     </div>
     <div class="main">
@@ -72,6 +70,12 @@
     <!-- <script src="js/cek_admin.js"></script> -->
     <script src="js/navakses.js"></script>
     <script src="./get-absen-guru.js" type="module"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("jwt_admin")
+            window.location.href = "/index.html"
+         }
+    </script>
 </body>
 
 </html>
