@@ -1,123 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Fund Me App</title>
-    </head>
+<html lang="en">
 
-    <body>
-        <button id="connectButton">Connect</button>
-        <br />
-        <!-- <form> -->
-        <h2>Get Absen Guru</h2>
-        <label for="get-nama-guru">NAMA</label>
-        <input id="get-nama-guru" placeholder="Pak Agus" />
-        <br />
-        <label for="get-tanggal-guru">DATETIME</label>
-        <input id="get-tanggal-guru" placeholder="29/11/2022 22:00:00" />
-        <br />
-        <button type="button" id="getGuruButton">GET</button>
-        <!-- </form> -->
-        <br />
-        <h2>Hasil</h2>
-        <table style="width: 100%">
-            <tr>
-                <th>NIP</th>
-                <th>Nama</th>
-                <th>Longitude</th>
-                <th>Latitude</th>
-                <th>Datetime</th>
-            </tr>
-            <tr>
-                <td id="nip-guru"></td>
-                <td id="nama-guru"></td>
-                <td id="longitude-guru"></td>
-                <td id="latitude-guru"></td>
-                <td id="datetime-guru"></td>
-            </tr>
-        </table>
-        <br />
-        <br />
-        <h2>Set Absen Guru</h2>
-        <label for="set-nip-guru">NIP</label>
-        <input id="set-nip-guru" placeholder="796" />
-        <br />
-        <label for="set-nama-guru">NAMA</label>
-        <input id="set-nama-guru" placeholder="Pak Raha" />
-        <br />
-        <label for="set-long-guru">LONGITUDE</label>
-        <input id="set-long-guru" placeholder="123.456" />
-        <br />
-        <label for="set-lat-guru">LATITUDE</label>
-        <input id="set-lat-guru" placeholder="123.456" />
-        <br />
-        <label for="set-datetime-guru">DATETIME</label>
-        <input id="set-datetime-guru" placeholder="29/11/2022 22:00:00" />
-        <br />
-        <button type="button" id="setGuruButton">POST</button>
-        <br />
-        <h1 id="response-guru"></h1>
-        <br />
-        <br />
-        <!-- <form> -->
-        <h2>Get Absen Siswa</h2>
-        <label for="get-nama-siswa">NAMA</label>
-        <input id="get-nama-siswa" placeholder="Agus" />
-        <br />
-        <label for="get-tanggal-siswa">DATETIME</label>
-        <input id="get-tanggal-siswa" placeholder="29/11/2022 22:00:00" />
-        <br />
-        <button type="button" id="getSiswaButton">GET</button>
-        <!-- </form> -->
-        <br />
-        <h2>Hasil</h2>
-        <table style="width: 100%">
-            <tr>
-                <th>NIS</th>
-                <th>Nama</th>
-                <th>Kelas</th>
-                <th>Mapel</th>
-                <th>Longitude</th>
-                <th>Latitude</th>
-                <th>Datetime</th>
-            </tr>
-            <tr>
-                <td id="nis-siswa"></td>
-                <td id="nama-siswa"></td>
-                <td id="kelas-siswa"></td>
-                <td id="mapel-siswa"></td>
-                <td id="longitude-siswa"></td>
-                <td id="latitude-siswa"></td>
-                <td id="datetime-siswa"></td>
-            </tr>
-        </table>
-        <br />
-        <br />
-        <h2>Set Absen Siswa</h2>
-        <label for="set-nis-siswa">NIS</label>
-        <input id="set-nis-siswa" placeholder="796" />
-        <br />
-        <label for="set-nama-siswa">NAMA</label>
-        <input id="set-nama-siswa" placeholder="Raha" />
-        <br />
-        <label for="set-kelas-siswa">KELAS</label>
-        <input id="set-kelas-siswa" placeholder="X IPS 2" />
-        <br />
-        <label for="set-mapel-siswa">Mapel</label>
-        <input id="set-mapel-siswa" placeholder="Matematika" />
-        <br />
-        <label for="set-long-siswa">LONGITUDE</label>
-        <input id="set-long-siswa" placeholder="123.456" />
-        <br />
-        <label for="set-lat-siswa">LATITUDE</label>
-        <input id="set-lat-siswa" placeholder="123.456" />
-        <br />
-        <label for="set-datetime-siswa">DATETIME</label>
-        <input id="set-datetime-siswa" placeholder="29/11/2022 22:00:00" />
-        <br />
-        <button type="button" id="setSiswaButton">POST</button>
-        <br />
-        <h1 id="response-siswa"></h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <title>Login</title>
+</head>
 
-    <script src="./index.js" type="module"></script>
+<body>
+    <img class="wave" src="assets/wave.svg">
+    <div class="container">
+        <div class="img">
+            <img src="assets/calendar.svg" alt="calendar">
+        </div>
+        <div class="login-container">
+            <form action="dashboard.html" onsubmit="return login()">
+                <img class="avatar" src="assets/avatar.svg">
+                <h2>Welcome Back</h2>
+                <div class="input-div a">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h5>Username</h5>
+                        <input class="input" id="username" type="text">
+                    </div>
+                </div>
+                <div class="input-div b">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>Password</h5>
+                        <input class="input" id="password" type="password">
+                    </div>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <a href="loginsiswa.html" style="text-decoration: none; float: left;">Login Siswa</a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
 </html>

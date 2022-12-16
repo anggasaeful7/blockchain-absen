@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <header>Geo Attendance</header>
+        <ul>
+            <li id="nav-dashboard"><a href="dashboard.html"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+            <li id="nav-datasiswa"><a href="DataSiswa.html"><i class="fas fa-user"></i>Data Siswa</a></li>
+            <li id="nav-dataguru"><a href="DataGuru.html"><i class="fas fa-user"></i>Data Guru</a></li>
+            <li id="nav-rekapsiswa"><a href="rekapSiswa.html"><i class="fas fa-calendar-week"></i>Rekap Siswa</a></li>
+            <li id="nav-rekapguru"><a href="rekapGuru.html"><i class="fas fa-calendar-week"></i>Rekap Guru</a></li>
+            <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
+            <button onclick="logout()" class="absen-masuk" style="margin-left: 30px;">Keluar</button>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" name="search" placeholder="Search">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-user"></i>
+            <div class="user">
+                <a href="profile.html" class="profile-user">Account</a>
+            </div>
+        </div>
+        <h1 class="title-ds">Data absen hari ini</h1>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Kategori</th>
+                    <th>Login</th>
+                    <th>Logout</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Abdul</td>
+                    <td>Guru</td>
+                    <td>12/01/2022 06.45</td>
+                    <td>12/01/2022 17.21</td>
+                </tr>
+                 <tr>
+                    <td>2</td>
+                    <td>Ahmad</td>
+                    <td>Guru</td>
+                    <td>12/01/2022 06.28</td>
+                    <td>12/01/2022 14.41</td>
+                </tr>
+                 <tr>
+                    <td>3</td>
+                    <td>Adi</td>
+                    <td>Guru</td>
+                    <td>12/01/2022 07.00</td>
+                    <td>12/01/2022 16.00</td>
+                </tr>
+                 <tr>
+                    <td>4</td>
+                    <td>Aziz</td>
+                    <td>Siswa</td>
+                    <td>12/01/2022 06.41</td>
+                    <td>12/01/2022 15.30</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Adit</td>
+                    <td>Siswa</td>
+                    <td>12/01/2022 06.55</td>
+                    <td>12/01/2022 15.34</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Budi</td>
+                    <td>Guru</td>
+                    <td>12/01/2022 06.00</td>
+                    <td>12/01/2022 15.20</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="js/cek_admin.js"></script>
+    <script src="js/navakses.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("jwt_admin")
+            window.location.href = "/index.html"
+         }
+    </script>
+</body>
+
+</html>
