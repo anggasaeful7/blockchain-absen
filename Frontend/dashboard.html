@@ -20,7 +20,7 @@
             <li id="nav-rekapsiswa"><a href="rekapSiswa.html"><i class="fas fa-calendar-week"></i>Rekap Siswa</a></li>
             <li id="nav-rekapguru"><a href="rekapGuru.html"><i class="fas fa-calendar-week"></i>Rekap Guru</a></li>
             <li id="nav-about"><a href="about.html"><i class="fas fa-question-circle"></i>About</a></li>
-            <li id="nav-exit"><a onclick="logout()"><i class="fas fa-window-close"></i>Keluar</a></li>
+            <button onclick="logout()" class="absen-masuk" style="margin-left: 30px;">Keluar</button>
         </ul>
     </div>
     <div class="main">
@@ -95,6 +95,12 @@
     <script src="js/cek_admin.js"></script>
     <script src="js/navakses.js"></script>
     <script src="js/login.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem("jwt_admin")
+            window.location.href = "/index.html"
+         }
+    </script>
 </body>
 
 </html>
