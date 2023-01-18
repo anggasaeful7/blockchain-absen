@@ -23,8 +23,15 @@ async function connect() {
 }
 
 async function set_siswa() {
-    var date = new Date()
-    var current_date = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate()
+    const today = new Date()
+    const yyyy = today.getFullYear()
+    let mm = today.getMonth() + 1 // Months start at 0!
+    let dd = today.getDate()
+
+    if (dd < 10) dd = "0" + dd
+    if (mm < 10) mm = "0" + mm
+
+    const current_date = yyyy + "/" + mm + "/" + dd
 
     var current_time = date.getHours() + ":" + date.getMinutes()
 

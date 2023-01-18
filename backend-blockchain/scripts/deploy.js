@@ -16,7 +16,7 @@ async function main() {
     }
 }
 
-// async function verify(contractAddress, args) {
+// async function verify
 const verify = async (contractAddress, args) => {
     console.log("Verifying contract...")
     try {
